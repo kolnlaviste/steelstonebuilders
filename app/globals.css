@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Lora", Georgia, serif;
+  --font-mono: "Geist Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #1c1917;
+  color: #fafaf8;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f4f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #c8c4bc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1c1917;
+}

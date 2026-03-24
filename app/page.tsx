@@ -9,111 +9,128 @@ export default function HomePage() {
   return (
     <>
       <Nav />
-      <main className="pt-14 max-w-5xl mx-auto px-6">
+      <main className="pt-16">
 
-        {/* ── INTRO ──────────────────────────────────── */}
-        <section className="py-16 md:py-24 border-b border-stone-200">
-          <p className="font-mono text-xs text-stone-400 mb-6 tracking-wide">
-            Cebu City, Philippines — Design & Build
+        {/* ── HERO INTRO ─────────────────────────────── */}
+        <section className="max-w-6xl mx-auto px-8 pt-20 pb-16 border-b border-[#E5DDD0]">
+          <p className="font-[family-name:var(--font-sans)] text-sm text-[#8B7355] tracking-widest uppercase mb-6">
+            Cebu City, Philippines
           </p>
-          <h1 className="font-serif text-2xl md:text-3xl text-[#1C1917] leading-snug max-w-lg mb-4">
-            We design and build homes, offices, and commercial spaces across Cebu.
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] leading-tight max-w-3xl mb-8">
+            We build homes and spaces that people are proud of.
           </h1>
-          <p className="font-mono text-xs text-stone-400 max-w-md leading-relaxed mb-10">
-            Founded on honesty, integrity, and a commitment to quality — Steel & Stone Builders has been serving clients across Cebu since 2015.
+          <p className="font-[family-name:var(--font-sans)] text-lg text-[#7A7A7A] max-w-xl leading-relaxed mb-10">
+            Steel & Stone Builders is a design and build company based in Cebu. We work closely with our clients from the first sketch to the final handover.
           </p>
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 border border-[#1C1917] px-5 py-3
-              font-mono text-xs text-[#1C1917]
-              hover:bg-[#1C1917] hover:text-[#FAFAF8] transition-colors duration-200"
+            className="inline-block bg-[#1A1A1A] text-[#F9F6F1] font-[family-name:var(--font-sans)] text-sm px-8 py-4 hover:bg-[#8B7355] transition-colors duration-300"
           >
-            View Our Work →
+            See Our Work
           </Link>
         </section>
 
         {/* ── FEATURED PROJECTS ──────────────────────── */}
-        <section className="py-16 border-b border-stone-200">
-          <p className="font-mono text-xs text-stone-400 mb-10 tracking-wide">
-            Recent Projects
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+        <section className="max-w-6xl mx-auto px-8 py-20">
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl text-[#1A1A1A]">
+              Recent Projects
+            </h2>
+            <Link
+              href="/work"
+              className="font-[family-name:var(--font-sans)] text-sm text-[#8B7355] hover:text-[#1A1A1A] transition-colors"
+            >
+              View all {projects.length} →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-16">
             {featured.map((project) => (
               <Link
                 key={project.slug}
                 href={`/work/${project.slug}`}
                 className="group block"
               >
+                {/* Image */}
                 <div
-                  className="relative overflow-hidden bg-stone-100 mb-4 border border-stone-200"
+                  className="relative overflow-hidden bg-[#EDE8DF] mb-5"
                   style={{ aspectRatio: "4/3" }}
                 >
                   <Image
                     src={project.coverImage}
                     alt={project.coverAlt}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     sizes="(max-width: 640px) 100vw, 50vw"
                   />
                 </div>
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="font-serif text-sm text-[#1C1917] mb-0.5">
-                      {project.title}
-                    </p>
-                    <p className="font-mono text-xs text-stone-400">
-                      {project.location} — {project.year}
-                    </p>
-                    <p className="font-mono text-xs text-stone-300 mt-0.5">
-                      {project.type}
-                    </p>
-                  </div>
-                  <span className="font-mono text-xs text-stone-300 shrink-0 mt-0.5">
-                    {project.index}
-                  </span>
-                </div>
+
+                {/* Info */}
+                <h3 className="font-[family-name:var(--font-display)] text-xl text-[#1A1A1A] mb-1 group-hover:text-[#8B7355] transition-colors">
+                  {project.title}
+                </h3>
+                <p className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A]">
+                  {project.location} — {project.year}
+                </p>
               </Link>
             ))}
           </div>
-          <div className="mt-10">
-            <Link
-              href="/work"
-              className="font-mono text-xs text-stone-400 hover:text-[#1C1917] transition-colors"
-            >
-              See all {projects.length} projects →
-            </Link>
+        </section>
+
+        {/* ── WHY US STRIP ───────────────────────────── */}
+        <section className="bg-[#1A1A1A] py-20">
+          <div className="max-w-6xl mx-auto px-8">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl text-[#F9F6F1] mb-14">
+              Why clients choose us
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
+              {[
+                { title: "Honest Communication", body: "We keep you informed at every stage. No surprises, no hidden costs." },
+                { title: "Built to Last", body: "We use quality materials and proven methods. Every structure we build is meant to stand for decades." },
+                { title: "Local Experience", body: "We know Cebu — its climate, its regulations, and its communities. That knowledge shapes every project we take on." },
+              ].map((item) => (
+                <div key={item.title}>
+                  <h3 className="font-[family-name:var(--font-display)] text-lg text-[#C9B99A] mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="font-[family-name:var(--font-sans)] text-sm text-[#9A9A9A] leading-relaxed">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ── CONTACT CTA ────────────────────────────── */}
-        <section className="py-16">
-          <p className="font-mono text-xs text-stone-400 mb-4 tracking-wide">
-            Start a Project
-          </p>
-          <p className="font-serif text-xl text-[#1C1917] mb-6 max-w-md leading-snug">
-            Have something in mind? We'd love to hear about it.
+        <section className="max-w-6xl mx-auto px-8 py-20 border-b border-[#E5DDD0]">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-[#1A1A1A] max-w-lg leading-tight mb-6">
+            Ready to start your project?
+          </h2>
+          <p className="font-[family-name:var(--font-sans)] text-lg text-[#7A7A7A] max-w-md leading-relaxed mb-8">
+            Tell us what you have in mind. We'll get back to you within one business day.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 border border-[#1C1917] px-5 py-3
-              font-mono text-xs text-[#1C1917]
-              hover:bg-[#1C1917] hover:text-[#FAFAF8] transition-colors duration-200"
+            className="inline-block border border-[#1A1A1A] text-[#1A1A1A] font-[family-name:var(--font-sans)] text-sm px-8 py-4 hover:bg-[#1A1A1A] hover:text-[#F9F6F1] transition-colors duration-300"
           >
-            Get in Touch →
+            Get in Touch
           </Link>
         </section>
 
         {/* ── FOOTER ─────────────────────────────────── */}
-        <footer className="border-t border-stone-200 py-8 flex flex-col sm:flex-row justify-between gap-3">
-          <span className="font-mono text-xs text-stone-300">
+        <footer className="max-w-6xl mx-auto px-8 py-10 flex flex-col sm:flex-row justify-between gap-4">
+          <span className="font-[family-name:var(--font-sans)] text-sm text-[#B0A090]">
             © {new Date().getFullYear()} Steel & Stone Builders, OPC
           </span>
-          <a
-            href="mailto:steelstonebuilders@gmail.com"
-            className="font-mono text-xs text-stone-400 hover:text-[#1C1917] transition-colors"
-          >
-            steelstonebuilders@gmail.com
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+            <a href="tel:032402321" className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A] hover:text-[#1A1A1A] transition-colors">
+              (032) 402-3211
+            </a>
+            <a href="mailto:steelstonebuilders@gmail.com" className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A] hover:text-[#1A1A1A] transition-colors">
+              steelstonebuilders@gmail.com
+            </a>
+          </div>
         </footer>
 
       </main>

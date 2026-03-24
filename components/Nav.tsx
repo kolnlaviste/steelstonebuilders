@@ -37,7 +37,7 @@ export default function Nav() {
             href="/"
             className="font-mono text-[11px] tracking-[0.25em] uppercase text-[#121212] hover:opacity-50 transition-opacity duration-200"
           >
-            Studio / Archive
+            Steel Stone Builders
           </Link>
 
           {/* Desktop nav */}
@@ -61,7 +61,7 @@ export default function Nav() {
                 hover:border-[#121212] hover:bg-[#121212] hover:text-white
                 transition-all duration-200"
             >
-              Enquire
+              Inquire
             </a>
           </nav>
 

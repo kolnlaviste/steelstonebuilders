@@ -14,41 +14,42 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <Nav />
-      <main className="pt-14 max-w-5xl mx-auto px-6">
+      <main className="pt-16">
 
         {/* ── HEADER ─────────────────────────────────── */}
-        <section className="py-12 md:py-16 border-b border-stone-200">
+        <section className="max-w-6xl mx-auto px-8 pt-20 pb-14 border-b border-[#E5DDD0]">
           <Link
             href="/work"
-            className="font-mono text-xs text-stone-400 hover:text-[#1C1917] transition-colors mb-8 inline-block"
+            className="font-[family-name:var(--font-sans)] text-sm text-[#8B7355] hover:text-[#1A1A1A] transition-colors mb-10 inline-block"
           >
-            ← Work
+            ← Back to Work
           </Link>
 
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
-              <h1 className="font-serif text-2xl md:text-3xl text-[#1C1917] mb-2">
+              <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-[#1A1A1A] leading-tight mb-3">
                 {project.title}
               </h1>
-              <p className="font-mono text-xs text-stone-400">
+              <p className="font-[family-name:var(--font-sans)] text-base text-[#7A7A7A]">
                 {project.location} — {project.year}
               </p>
             </div>
 
-            <div className="flex gap-8 sm:text-right shrink-0">
+            {/* Specs */}
+            <div className="flex gap-10 shrink-0">
               <div>
-                <p className="font-mono text-[10px] text-stone-300 uppercase tracking-wider mb-1">
+                <p className="font-[family-name:var(--font-sans)] text-xs text-[#B0A090] uppercase tracking-widest mb-2">
                   Type
                 </p>
-                <p className="font-mono text-xs text-stone-600">
+                <p className="font-[family-name:var(--font-sans)] text-sm text-[#1A1A1A]">
                   {project.type}
                 </p>
               </div>
               <div>
-                <p className="font-mono text-[10px] text-stone-300 uppercase tracking-wider mb-1">
+                <p className="font-[family-name:var(--font-sans)] text-xs text-[#B0A090] uppercase tracking-widest mb-2">
                   Scope
                 </p>
-                <p className="font-mono text-xs text-stone-600">
+                <p className="font-[family-name:var(--font-sans)] text-sm text-[#1A1A1A]">
                   {project.scope}
                 </p>
               </div>
@@ -57,35 +58,41 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </section>
 
         {/* ── COVER IMAGE ────────────────────────────── */}
-        <div
-          className="relative overflow-hidden bg-stone-100 mt-8 mb-4 border border-stone-200"
-          style={{ aspectRatio: "16/9" }}
-        >
-          <Image
-            src={project.coverImage}
-            alt={project.coverAlt}
-            fill
-            priority
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 960px"
-          />
+        <div className="max-w-6xl mx-auto px-8 mt-12">
+          <div
+            className="relative overflow-hidden bg-[#EDE8DF] w-full"
+            style={{ aspectRatio: "16/9" }}
+          >
+            <Image
+              src={project.coverImage}
+              alt={project.coverAlt}
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
         </div>
 
         {/* ── DESCRIPTION ────────────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_240px] gap-12 py-12 border-b border-stone-200">
-          <p className="font-serif text-base text-stone-600 leading-relaxed">
-            {project.fullDesc}
-          </p>
-          <div />
+        <div className="max-w-6xl mx-auto px-8 py-16 border-b border-[#E5DDD0]">
+          <div className="max-w-2xl">
+            <p className="font-[family-name:var(--font-sans)] text-xs text-[#8B7355] uppercase tracking-widest mb-6">
+              About this Project
+            </p>
+            <p className="font-[family-name:var(--font-display)] text-xl md:text-2xl text-[#1A1A1A] leading-relaxed">
+              {project.fullDesc}
+            </p>
+          </div>
         </div>
 
         {/* ── IMAGE GALLERY ──────────────────────────── */}
         {project.images.length > 0 && (
-          <section className="py-12 space-y-4">
+          <div className="max-w-6xl mx-auto px-8 py-16 space-y-6">
             {project.images.map((img, i) => (
               <div key={i}>
                 <div
-                  className="relative overflow-hidden bg-stone-100 border border-stone-200"
+                  className="relative overflow-hidden bg-[#EDE8DF] w-full"
                   style={{ aspectRatio: i === 0 ? "16/9" : "4/3" }}
                 >
                   <Image
@@ -93,53 +100,56 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     alt={img.alt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 960px"
+                    sizes="(max-width: 1280px) 100vw, 1152px"
                   />
                 </div>
                 {img.caption && (
-                  <p className="font-mono text-xs text-stone-400 mt-2">
+                  <p className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A] mt-3">
                     {img.caption}
                   </p>
                 )}
               </div>
             ))}
-          </section>
+          </div>
         )}
 
         {/* ── PREV / NEXT ────────────────────────────── */}
-        <nav className="border-t border-stone-200 py-10 flex justify-between items-center gap-4">
+        <nav className="max-w-6xl mx-auto px-8 py-14 border-t border-[#E5DDD0] flex justify-between gap-6">
           {prev ? (
-            <Link href={`/work/${prev.slug}`} className="group flex flex-col gap-1">
-              <span className="font-mono text-xs text-stone-400 group-hover:text-[#1C1917] transition-colors">
+            <Link href={`/work/${prev.slug}`} className="group flex flex-col gap-2">
+              <span className="font-[family-name:var(--font-sans)] text-sm text-[#8B7355] group-hover:text-[#1A1A1A] transition-colors">
                 ← Previous
               </span>
-              <span className="font-serif text-sm text-[#1C1917]">
+              <span className="font-[family-name:var(--font-display)] text-xl text-[#1A1A1A]">
                 {prev.title}
+              </span>
+              <span className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A]">
+                {prev.location}
               </span>
             </Link>
           ) : <div />}
 
           {next ? (
-            <Link href={`/work/${next.slug}`} className="group flex flex-col gap-1 text-right">
-              <span className="font-mono text-xs text-stone-400 group-hover:text-[#1C1917] transition-colors">
+            <Link href={`/work/${next.slug}`} className="group flex flex-col gap-2 text-right">
+              <span className="font-[family-name:var(--font-sans)] text-sm text-[#8B7355] group-hover:text-[#1A1A1A] transition-colors">
                 Next →
               </span>
-              <span className="font-serif text-sm text-[#1C1917]">
+              <span className="font-[family-name:var(--font-display)] text-xl text-[#1A1A1A]">
                 {next.title}
+              </span>
+              <span className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A]">
+                {next.location}
               </span>
             </Link>
           ) : <div />}
         </nav>
 
         {/* ── FOOTER ─────────────────────────────────── */}
-        <footer className="border-t border-stone-200 py-8 flex flex-col sm:flex-row justify-between gap-3">
-          <span className="font-mono text-xs text-stone-300">
+        <footer className="max-w-6xl mx-auto px-8 py-10 border-t border-[#E5DDD0] flex flex-col sm:flex-row justify-between gap-4">
+          <span className="font-[family-name:var(--font-sans)] text-sm text-[#B0A090]">
             © {new Date().getFullYear()} Steel & Stone Builders, OPC
           </span>
-          <a
-            href="mailto:steelstonebuilders@gmail.com"
-            className="font-mono text-xs text-stone-400 hover:text-[#1C1917] transition-colors"
-          >
+          <a href="mailto:steelstonebuilders@gmail.com" className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A] hover:text-[#1A1A1A] transition-colors">
             steelstonebuilders@gmail.com
           </a>
         </footer>

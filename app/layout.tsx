@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
-import { Lora, Geist_Mono } from "next/font/google";
+import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const lora = Lora({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-display",
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Steel & Stone Builders, OPC — Cebu",
+    default: "Steel & Stone Builders — Cebu",
     template: "%s | Steel & Stone Builders",
   },
   description:
-    "A design and build company based in Cebu City. We design and construct residential homes, commercial fit-outs, and institutional buildings with honesty and full commitment.",
+    "A design and build company based in Cebu City. We build homes, offices, and commercial spaces with honesty and full commitment.",
 };
 
 export default function RootLayout({
@@ -29,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${lora.variable} ${geistMono.variable}`}>
-      <body className="bg-[#FAFAF8] text-[#1C1917] antialiased">
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
+      <body className="bg-[#F9F6F1] text-[#1A1A1A] antialiased">
         {children}
       </body>
     </html>

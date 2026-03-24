@@ -7,21 +7,21 @@ export default function WorkPage() {
   return (
     <>
       <Nav />
-      <main className="pt-14 max-w-5xl mx-auto px-6">
+      <main className="pt-16">
 
         {/* ── HEADER ─────────────────────────────────── */}
-        <section className="py-16 md:py-20 border-b border-stone-200">
-          <p className="font-mono text-xs text-stone-400 mb-4 tracking-wide">
+        <section className="max-w-6xl mx-auto px-8 pt-20 pb-14 border-b border-[#E5DDD0]">
+          <p className="font-[family-name:var(--font-sans)] text-sm text-[#8B7355] tracking-widest uppercase mb-4">
             {projects.length} Projects
           </p>
-          <h1 className="font-serif text-2xl md:text-3xl text-[#1C1917]">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-[#1A1A1A]">
             Our Work
           </h1>
         </section>
 
-        {/* ── PROJECT GRID ───────────────────────────── */}
-        <section className="py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+        {/* ── GRID ───────────────────────────────────── */}
+        <section className="max-w-6xl mx-auto px-8 py-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-16">
             {projects.map((project) => (
               <Link
                 key={project.slug}
@@ -29,47 +29,34 @@ export default function WorkPage() {
                 className="group block"
               >
                 <div
-                  className="relative overflow-hidden bg-stone-100 mb-4 border border-stone-200"
+                  className="relative overflow-hidden bg-[#EDE8DF] mb-5"
                   style={{ aspectRatio: "4/3" }}
                 >
                   <Image
                     src={project.coverImage}
                     alt={project.coverAlt}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     sizes="(max-width: 640px) 100vw, 50vw"
                   />
                 </div>
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="font-serif text-sm text-[#1C1917] mb-0.5">
-                      {project.title}
-                    </p>
-                    <p className="font-mono text-xs text-stone-400">
-                      {project.location} — {project.year}
-                    </p>
-                    <p className="font-mono text-xs text-stone-300 mt-0.5">
-                      {project.type}
-                    </p>
-                  </div>
-                  <span className="font-mono text-xs text-stone-300 shrink-0 mt-0.5">
-                    {project.index}
-                  </span>
-                </div>
+                <h3 className="font-[family-name:var(--font-display)] text-xl text-[#1A1A1A] mb-1 group-hover:text-[#8B7355] transition-colors">
+                  {project.title}
+                </h3>
+                <p className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A]">
+                  {project.location} — {project.year}
+                </p>
               </Link>
             ))}
           </div>
         </section>
 
         {/* ── FOOTER ─────────────────────────────────── */}
-        <footer className="border-t border-stone-200 py-8 flex flex-col sm:flex-row justify-between gap-3">
-          <span className="font-mono text-xs text-stone-300">
+        <footer className="max-w-6xl mx-auto px-8 py-10 border-t border-[#E5DDD0] flex flex-col sm:flex-row justify-between gap-4">
+          <span className="font-[family-name:var(--font-sans)] text-sm text-[#B0A090]">
             © {new Date().getFullYear()} Steel & Stone Builders, OPC
           </span>
-          <a
-            href="mailto:steelstonebuilders@gmail.com"
-            className="font-mono text-xs text-stone-400 hover:text-[#1C1917] transition-colors"
-          >
+          <a href="mailto:steelstonebuilders@gmail.com" className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A] hover:text-[#1A1A1A] transition-colors">
             steelstonebuilders@gmail.com
           </a>
         </footer>

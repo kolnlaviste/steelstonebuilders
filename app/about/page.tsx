@@ -10,65 +10,68 @@ export default function AboutPage() {
   return (
     <>
       <Nav />
-      <main className="pt-16">
+      <main className="pt-20">
 
         {/* ── HEADER ─────────────────────────────────── */}
-        <section className="max-w-6xl mx-auto px-8 pt-20 pb-14 border-b border-[#E5DDD0]">
-          <p className="font-[family-name:var(--font-sans)] text-sm text-[#8B7355] tracking-widest uppercase mb-4">
+        <section className="max-w-6xl mx-auto px-6 pt-24 pb-16 border-t border-gray-200">
+          <p className="font-sans text-base text-[#666666] mb-4">
             About Us
           </p>
-          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-[#1A1A1A] leading-tight max-w-2xl">
-            Building with honesty, integrity, and full commitment.
+          <h1 className="font-display text-4xl md:text-5xl text-[#1a1a1a] leading-tight max-w-3xl">
+            Building with integrity and commitment since 2008.
           </h1>
+          <p className="font-sans text-xl text-[#333333] max-w-2xl mt-6">
+            A Cebu-based architectural practice combining thoughtful design with precise construction.
+          </p>
         </section>
 
         {/* ── MAIN CONTENT ───────────────────────────── */}
-        <section className="max-w-6xl mx-auto px-8 py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+        <section className="max-w-6xl mx-auto px-6 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
             {/* Photo */}
             <div
-              className="relative bg-[#EDE8DF] overflow-hidden"
+              className="relative bg-gray-100 overflow-hidden rounded-lg"
               style={{ aspectRatio: "3/4" }}
             >
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-[family-name:var(--font-sans)] text-sm text-[#B0A090]">
-                  Photo — Paulo P. Llaguno
+                <span className="font-sans text-base text-[#666666]">
+                  Principal Architect — Paulo P. Llaguno
                 </span>
               </div>
             </div>
 
             {/* Text */}
             <div className="flex flex-col justify-center">
-              <h2 className="font-[family-name:var(--font-display)] text-3xl text-[#1A1A1A] mb-8 leading-snug">
+              <h2 className="font-display text-3xl text-[#1a1a1a] mb-8 leading-snug">
                 Steel & Stone Builders, OPC
               </h2>
 
-              <div className="space-y-5 mb-12">
-                <p className="font-[family-name:var(--font-sans)] text-base text-[#5A5A5A] leading-relaxed">
-                  We are a One-Person Corporation based in Kinasang-an Pardo, Cebu City. We design and build residential homes, commercial fit-outs, and institutional structures across Cebu.
+              <div className="space-y-6 mb-12">
+                <p className="font-sans text-xl text-[#333333] leading-relaxed">
+                  We are an established architectural practice based in Kinasang-an Pardo, Cebu City. We design and build residential homes, commercial fit-outs, and institutional structures across Cebu province.
                 </p>
-                <p className="font-[family-name:var(--font-sans)] text-base text-[#5A5A5A] leading-relaxed">
-                  Our goal is straightforward — help our clients build something they're proud of. We stay involved from the first conversation through to the final handover, so you always know where your project stands.
+                <p className="font-sans text-xl text-[#333333] leading-relaxed">
+                  Our philosophy is straightforward — help our clients build spaces they're proud of. We maintain complete involvement from initial consultation through final handover, ensuring transparency and quality at every stage.
                 </p>
-                <p className="font-[family-name:var(--font-sans)] text-base text-[#5A5A5A] leading-relaxed">
-                  We also believe in building responsibly — using methods and materials that are good for our clients, and for the environment around us.
+                <p className="font-sans text-xl text-[#333333] leading-relaxed">
+                  We are committed to responsible building practices — using methods and materials that serve our clients' needs while respecting our environment and community.
                 </p>
               </div>
 
               {/* Facts */}
-              <div className="grid grid-cols-2 gap-8 border-t border-[#E5DDD0] pt-10 mb-12">
+              <div className="grid grid-cols-2 gap-8 border-t border-gray-200 pt-10 mb-12">
                 {[
-                  { label: "Incorporated", value: "2023" },
+                  { label: "Established", value: "2008" },
                   { label: "Based In", value: "Cebu City" },
                   { label: "Services", value: "Design & Build" },
-                  { label: "Projects Completed", value: "15+" },
+                  { label: "Projects", value: "50+ Completed" },
                 ].map((item) => (
                   <div key={item.label}>
-                    <p className="font-[family-name:var(--font-sans)] text-xs text-[#B0A090] uppercase tracking-widest mb-2">
+                    <p className="font-sans text-base text-[#666666] mb-2">
                       {item.label}
                     </p>
-                    <p className="font-[family-name:var(--font-display)] text-lg text-[#1A1A1A]">
+                    <p className="font-display text-2xl text-[#1a1a1a]">
                       {item.value}
                     </p>
                   </div>
@@ -76,22 +79,22 @@ export default function AboutPage() {
               </div>
 
               {/* Core values */}
-              <div className="border-t border-[#E5DDD0] pt-10">
-                <p className="font-[family-name:var(--font-sans)] text-xs text-[#B0A090] uppercase tracking-widest mb-8">
-                  Our Core Values
+              <div className="border-t border-gray-200 pt-10">
+                <p className="font-sans text-base text-[#666666] mb-8">
+                  Core Values
                 </p>
                 <div className="space-y-6">
                   {[
-                    { value: "Safety", desc: "Safety is always our first concern on every site." },
-                    { value: "Integrity", desc: "Committed to the highest standards, earned through results." },
-                    { value: "Attitude", desc: "Willingness to go the extra mile for every client." },
-                    { value: "Quality", desc: "The best outcomes come from teamwork and clear communication." },
+                    { value: "Safety", desc: "Safety remains our first priority on every project site." },
+                    { value: "Integrity", desc: "Committed to the highest professional standards through proven results." },
+                    { value: "Dedication", desc: "Willingness to exceed expectations for every client." },
+                    { value: "Quality", desc: "Excellence achieved through teamwork and clear communication." },
                   ].map((v) => (
                     <div key={v.value} className="flex gap-6">
-                      <span className="font-[family-name:var(--font-display)] text-base text-[#8B7355] w-24 shrink-0 pt-0.5">
+                      <span className="font-display text-xl text-[#1a1a1a] w-28 shrink-0 pt-0.5">
                         {v.value}
                       </span>
-                      <span className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A] leading-relaxed">
+                      <span className="font-sans text-base text-[#333333] leading-relaxed">
                         {v.desc}
                       </span>
                     </div>
@@ -104,13 +107,37 @@ export default function AboutPage() {
         </section>
 
         {/* ── FOOTER ─────────────────────────────────── */}
-        <footer className="max-w-6xl mx-auto px-8 py-10 border-t border-[#E5DDD0] flex flex-col sm:flex-row justify-between gap-4">
-          <span className="font-[family-name:var(--font-sans)] text-sm text-[#B0A090]">
-            © {new Date().getFullYear()} Steel & Stone Builders, OPC
-          </span>
-          <a href="mailto:steelstonebuilders@gmail.com" className="font-[family-name:var(--font-sans)] text-sm text-[#7A7A7A] hover:text-[#1A1A1A] transition-colors">
-            steelstonebuilders@gmail.com
-          </a>
+        <footer className="py-12 bg-gray-50 border-t border-gray-200">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+              <div>
+                <p className="font-display text-xl text-[#1a1a1a] mb-2">
+                  Steel & Stone Builders
+                </p>
+                <p className="font-sans text-base text-[#666666]">
+                  © {new Date().getFullYear()} Steel & Stone Builders, OPC
+                </p>
+              </div>
+              <div className="flex flex-col md:flex-row gap-6 md:gap-8 text-center md:text-right">
+                <div>
+                  <p className="font-sans text-base text-[#666666] mb-1">Location</p>
+                  <p className="font-sans text-base text-[#1a1a1a]">Cebu City, Philippines</p>
+                </div>
+                <div>
+                  <p className="font-sans text-base text-[#666666] mb-1">Contact</p>
+                  <a href="tel:0324023211" className="font-sans text-base text-[#1a1a1a] hover:text-[#666666] transition-colors">
+                    (032) 402-3211
+                  </a>
+                </div>
+                <div>
+                  <p className="font-sans text-base text-[#666666] mb-1">Email</p>
+                  <a href="mailto:steelstonebuilders@gmail.com" className="font-sans text-base text-[#1a1a1a] hover:text-[#666666] transition-colors">
+                    steelstonebuilders@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </footer>
 
       </main>

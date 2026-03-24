@@ -1,28 +1,46 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "DM Sans", system-ui, sans-serif;
+@layer base {
+  :root {
+    --font-display: "Oswald", var(--font-sans);
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-secondary: "Roboto", system-ui, sans-serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-gray-200 text-gray-900;
+  }
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-::selection {
-  background: #1a1a1a;
-  color: #f9f6f1;
-}
-
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #f9f6f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #c9b99a;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #1a1a1a;
 }

@@ -46,7 +46,6 @@ export const projects: Project[] = [
     images: [
       { src: "/images/tinapay/01.jpg", alt: "Building render — front elevation", caption: "Proposed front elevation — Kishanta Subd., Talisay City." },
       { src: "/images/tinapay/02.jpg", alt: "Construction progress — scaffolding", caption: "Structural works in progress." },
-      { src: "/images/tinapay/03.jpg", alt: "Construction progress — facade detail", caption: "Facade cladding and balcony works underway." },
     ],
   },
   {
@@ -211,7 +210,7 @@ export const projects: Project[] = [
     scope: "Natural Stone & Tile Installation Works",
     shortDesc: "Natural stone and tile installation works at the Nustar Integrated Resort in Cebu.",
     fullDesc: "Subcontracted by Saren Zion International Trading, Inc. for Universal Hotels and Resorts Inc. (UHRI), this project involved the supply and installation of natural stones and tiles across multiple areas of the Cebu Nustar Resort — including the high lounge, main lobby, VIP lift lobby, and Malavers Lounge. The scope required precision stonework across large-format luxury interior surfaces.",
-    coverImage: "/images/nustar/cover.jpg",
+    coverImage: "/images/nustar/03.jpg",
     coverAlt: "Nustar Resort — natural stone and tile installation",
     images: [
       { src: "/images/nustar/01.jpg", alt: "Large format stone panel installation", caption: "Large-format natural stone panel — wall installation." },

@@ -10,7 +10,7 @@ export default function WorkPage() {
       <main className="pt-20">
 
         {/* ── HEADER ─────────────────────────────────── */}
-        <section className="max-w-6xl mx-auto px-6 pt-24 pb-16 border-t border-gray-200">
+        <section className="max-w-6xl mx-auto px-6 pt-24 pb-8 border-t border-gray-200">
           <p className="font-sans text-base text-[#666666] mb-4">
             {projects.length} Projects
           </p>
@@ -23,7 +23,7 @@ export default function WorkPage() {
         </section>
 
         {/* ── GRID ───────────────────────────────────── */}
-        <section className="max-w-6xl mx-auto px-6 py-20">
+        <section className="max-w-6xl mx-auto px-6 pt-12 pb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Link

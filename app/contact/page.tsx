@@ -13,7 +13,7 @@ export default function ContactPage() {
       <main className="pt-20">
 
         {/* ── HEADER ─────────────────────────────────── */}
-        <section className="max-w-6xl mx-auto px-6 pt-24 pb-16 border-t border-gray-200">
+        <section className="max-w-6xl mx-auto px-6 pt-24 pb-8 border-t border-gray-200">
           <p className="font-sans text-base text-[#666666] mb-4">
             Contact Us
           </p>
@@ -26,7 +26,7 @@ export default function ContactPage() {
         </section>
 
         {/* ── CONTENT ────────────────────────────────── */}
-        <section className="max-w-6xl mx-auto px-6 py-20">
+        <section className="max-w-6xl mx-auto px-6 pt-12 pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
             {/* Left */}

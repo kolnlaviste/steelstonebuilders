@@ -21,7 +21,6 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   return (
@@ -35,7 +34,7 @@ export default function Nav() {
           {/* Wordmark */}
           <Link
             href="/"
-            className="font-display text-3xl text-[#1a1a1a] hover:text-[#666666] transition-colors duration-200"
+            className="font-display text-xl text-[#1a1a1a] hover:text-[#666666] transition-colors duration-200"
           >
             Steel & Stone
           </Link>
@@ -55,14 +54,6 @@ export default function Nav() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="mailto:steelstonebuilders@gmail.com"
-              className="border border-[#1a1a1a] px-4 py-2 font-sans text-sm
-                hover:bg-[#1a1a1a] hover:text-white
-                transition-all duration-200"
-            >
-              Inquire
-            </a>
           </nav>
 
           {/* Mobile menu button */}
